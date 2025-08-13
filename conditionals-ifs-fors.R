@@ -65,3 +65,58 @@ switch(species,
 
 
 # see next week dplyr::case_when() is very similar
+
+
+# writing for loops
+
+dog_names <- c("Teddy", "Khora", "Banjo", "Waffle")
+
+# create example for one data element to put into for loop
+# version with copy and pasting
+print(paste("My dog's name is", dog_names[1]))
+print(paste("My dog's name is", dog_names[2]))
+print(paste("My dog's name is", dog_names[3]))
+print(paste("My dog's name is", dog_names[4]))
+
+
+# version with a variable i can update
+pupster <- dog_names[1]
+
+print(paste("My dog's name is", pupster))
+
+# convert to a for loop
+for (pupster in dog_names) {
+  print(paste("My dog's name is", pupster))
+}
+
+# another for loop example
+
+# data that I'm working with
+mass <- seq(from = 0, to = 3, by = 0.5)
+
+# practicing writing the body of the for loop
+i <- mass[1]
+i
+new_val <- i + 2 # adding 2 to each value
+print(new_val) # printing the new value
+
+# write into a for loop
+for (i in mass) {
+  new_val <- i + 2 # adding 2 to each value
+  print(new_val) # printing the new value
+}
+
+# practice same example with indexing
+i <- 1
+for (i in 1:length(mass)) { # 1:length(mass) gives us a vector that is as long as our sequence... "defining iterator using the length of vector
+  new_val <- mass[i] + 2
+  print(new_val)
+}
+
+# another vector with iterating by position (indexing)
+tree_height <- c(1, 2, 6, 10)
+
+for (i in 1:length(tree_height)) { # creates the vector that is as long as the original vector (tree_height)
+  val <- tree_height[i] + tree_height[i + 1] # position + (position + next position)
+  print(val)
+}
